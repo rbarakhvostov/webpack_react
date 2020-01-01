@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './main.css';
+import './main.scss';
 
 const App = () => React.createElement("p", null, "Hello");
 

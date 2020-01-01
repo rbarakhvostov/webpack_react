@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -37,8 +38,11 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? 'production': isDev && 'development',
 
+    entry: './src/index.js',
+
     output: {
-      filename: isProd ? 'main-[hash:8].js' : undefined
+      filename: isProd ? 'main-[hash:8].js' : undefined,
+      path: path.resolve(__dirname, 'dist')
     },
 
     module: {

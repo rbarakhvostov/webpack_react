@@ -50,6 +50,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Hello world',
@@ -59,5 +60,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'main-[hash:8].css'
     })
-  ]
+  ],
+
+  devServer: {
+    open: true
+  }
 }

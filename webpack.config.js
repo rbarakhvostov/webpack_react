@@ -3,18 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env = {}) => {
-
   const { mode = 'development' } = env;
 
   const isProd = mode === 'production';
   const isDev = mode === 'development';
 
-  const getStyleLoaders = () => {
-    return [
-      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader'
-    ];
-  }
+  const getStyleLoaders = () => [isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'];
 
   const getPlugins = () => {
     const plugins = [
@@ -22,39 +16,40 @@ module.exports = (env = {}) => {
         title: 'Hello world',
         buildTime: new Date().toISOString(),
         template: 'public/index.html',
-        favicon: 'public/favicon.png'
-      })
+        favicon: 'public/favicon.png',
+      }),
     ];
 
     if (isProd) {
-      plugins.push(new MiniCssExtractPlugin({
-          filename: 'main-[hash:8].css'
-        })
+      plugins.push(
+        new MiniCssExtractPlugin({
+          filename: 'main-[hash:8].css',
+        }),
       );
     }
 
     return plugins;
-  }
+  };
 
   return {
-    mode: isProd ? 'production': isDev && 'development',
+    mode: isProd ? 'production' : isDev && 'development',
 
     entry: './src/index.jsx',
 
     output: {
       filename: isProd ? 'main-[hash:8].js' : undefined,
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist'),
     },
 
     module: {
       rules: [
-        //loading js
+        // loading js
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
-        //loading images
+        // loading images
         {
           test: /\.(png|jpg|jpeg|gif|ico)$/,
           use: [
@@ -62,12 +57,12 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: 'images',
-                name: '[name]-[sha1:hash:7].[ext]'
-              }
-            }
-          ]
+                name: '[name]-[sha1:hash:7].[ext]',
+              },
+            },
+          ],
         },
-        //loading fonts
+        // loading fonts
         {
           test: /\.(ttf|otf|eot|woff|woff2)$/,
           use: [
@@ -75,28 +70,28 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: 'fonts',
-                name: '[name].[ext]'
-              }
-            }
-          ]
+                name: '[name].[ext]',
+              },
+            },
+          ],
         },
-        //loading css
+        // loading css
         {
           test: /\.(css)$/,
           use: getStyleLoaders(),
         },
-        //loading sass/scss
+        // loading sass/scss
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), 'sass-loader']
-        }
-      ]
+          use: [...getStyleLoaders(), 'sass-loader'],
+        },
+      ],
     },
-  
+
     plugins: getPlugins(),
-  
+
     devServer: {
-      open: true
-    }
-  }
-}
+      open: true,
+    },
+  };
+};

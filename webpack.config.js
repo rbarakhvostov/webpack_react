@@ -39,7 +39,7 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? 'production': isDev && 'development',
 
-    entry: './src/index.js',
+    entry: './src/index.jsx',
 
     output: {
       filename: isProd ? 'main-[hash:8].js' : undefined,
@@ -50,7 +50,7 @@ module.exports = (env = {}) => {
       rules: [
         //loading js
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
         },

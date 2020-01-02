@@ -21,7 +21,8 @@ module.exports = (env = {}) => {
       new HtmlWebpackPlugin({
         title: 'Hello world',
         buildTime: new Date().toISOString(),
-        template: 'public/index.html'
+        template: 'public/index.html',
+        favicon: 'public/favicon.png'
       })
     ];
 

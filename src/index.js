@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 
 import './main.scss';
 
-const App = () => <p>This is Webpack React App</p>
+import url from './images/avatar.png'
+
+const App = () => (
+  <div>
+    <p>This is Webpack React App</p>
+    <img src={url} />
+  </div>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));

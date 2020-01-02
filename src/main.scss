@@ -1,5 +1,16 @@
+@font-face {
+  font-family: MaShanZheng-Regular;
+  src: url(./fonts/MaShanZheng-Regular.ttf);
+}
+
 $body-color: rgb(35, 243, 122);
 
 body {
+  font-family: MaShanZheng-Regular;
+  font-size: 24px;
   background-color: $body-color;
+}
+img {
+  width: 10%;
+  min-width: 100px;
 }

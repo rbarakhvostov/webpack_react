@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: ['import', 'jsx-a11y', 'react', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'error'
   },
   settings: {
     react: {

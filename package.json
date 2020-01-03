@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "Roman Barakhvostov",
+  "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env.mode=production",
@@ -11,8 +13,14 @@
     "lint:fix": "eslint src/**/*.{js,jsx} --fix",
     "prettier": "prettier --write src/**/*.{js,jsx}"
   },
-  "author": "Roman Barakhvostov",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["npm run lint:fix", "git add"]
+  },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
@@ -31,6 +39,8 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",

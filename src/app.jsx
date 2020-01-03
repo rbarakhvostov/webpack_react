@@ -5,32 +5,27 @@ import './main.scss';
 import url from './images/avatar.png';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-    this.increase = this.increase.bind(this);
-    this.decrease = this.decrease.bind(this);
-  }
+  state = {
+    count: 0,
+  };
 
-  increase() {
+  increase = () => {
     this.setState(prevState => ({
       count: prevState.count + 1,
     }));
     this.setState(prevState => ({
       count: prevState.count + 1,
     }));
-  }
+  };
 
-  decrease() {
+  decrease = () => {
     this.setState(prevState => ({
       count: prevState.count - 1,
     }));
     this.setState(prevState => ({
       count: prevState.count - 1,
     }));
-  }
+  };
 
   render() {
     return (

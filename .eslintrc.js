@@ -10,6 +10,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react',
   ],
+  parser: 'babel-eslint',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -21,7 +22,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['import', 'jsx-a11y', 'react', 'prettier'],
+  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
   rules: {
     'prettier/prettier': 'error'
   },

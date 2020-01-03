@@ -6,15 +6,16 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:jest/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/react',
   ],
-  parser: 'babel-eslint',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -22,9 +23,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
+  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier', 'jest'],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
   },
   settings: {
     react: {
@@ -33,6 +34,3 @@ module.exports = {
     },
   },
 };
-
-
-

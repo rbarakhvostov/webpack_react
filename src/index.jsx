@@ -6,10 +6,10 @@ import './main.scss';
 import url from './images/avatar.png';
 
 const App = () => (
-       <div>
+  <div>
     <p>This is Webpack React App</p>
     <img src={url} alt="avatar" />
-  </>
+  </div>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

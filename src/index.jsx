@@ -11,5 +11,5 @@ const App = () => (
     <img src={url} alt="avatar" />
   </div>
 );
-     
+         
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -98,5 +98,6 @@ module.exports = (env = {}) => {
       port: 9000,
       open: true,
     },
+    devtool: 'source-map',
   };
 };

@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:jest/recommended',
+    'jest-enzyme',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/react',
@@ -26,6 +27,7 @@ module.exports = {
   plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier', 'jest'],
   rules: {
     'prettier/prettier': 'error',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
   settings: {
     react: {

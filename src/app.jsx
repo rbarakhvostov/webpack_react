@@ -31,6 +31,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <img src={url} alt="avatar" />
+        <h1>COUNTER</h1>
         <span>{this.state.count}</span>
         <div>
           <button onClick={this.decrease}>-</button>

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> App renders without crashing 1`] = `
+<App>
+  <div
+    className="container"
+  >
+    <img
+      alt="avatar"
+      src="test-file-stub"
+    />
+    <h1>
+      COUNTER
+    </h1>
+    <span>
+      0
+    </span>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        -
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        +
+      </button>
+    </div>
+  </div>
+</App>
+`;

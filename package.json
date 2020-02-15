@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env.mode=production",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint src/**/*.{js,jsx}",
     "lint:fix": "eslint src/**/*.{js,jsx} --fix",
     "prettier": "prettier --write src/**/*.{js,jsx}"

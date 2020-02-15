@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './app-header.css';
 
-// eslint-disable-next-line react/prop-types
 const AppHeader = ({ toDo, done }) => {
   return (
     <div className="app-header">
@@ -12,6 +12,11 @@ const AppHeader = ({ toDo, done }) => {
       </h2>
     </div>
   );
+};
+
+AppHeader.propTypes = {
+  toDo: PropTypes.number,
+  done: PropTypes.number,
 };
 
 export default AppHeader;

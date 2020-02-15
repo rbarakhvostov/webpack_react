@@ -1,4 +1,5 @@
 import React, { Component, forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 import './item-add-form.css';
 
@@ -15,7 +16,6 @@ class ItemAddForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // eslint-disable-next-line react/prop-types
     this.props.onItemAdded(this.state.label);
     this.setState({
       label: '',
@@ -43,6 +43,10 @@ class ItemAddForm extends Component {
     );
   }
 }
+
+ItemAddForm.propTypes = {
+  onItemAdded: PropTypes.func,
+};
 
 // eslint-disable-next-line react/display-name
 export default forwardRef((props, ref) => {

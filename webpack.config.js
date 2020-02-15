@@ -36,7 +36,7 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? 'production' : isDev && 'development',
 
-    entry: './src/index.jsx',
+    entry: './src/index.js',
 
     output: {
       filename: isProd ? 'main-[hash:8].js' : undefined,

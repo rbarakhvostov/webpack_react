@@ -16,8 +16,7 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new HtmlWebpackPlugin({
-        title: 'Hello world',
-        buildTime: new Date().toISOString(),
+        title: 'React Build',
         template: 'public/index.html',
         favicon: 'public/favicon.png',
       }),
